@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import LiferayParams from '../types/LiferayParams'
+import { User } from './interfaces/user.interface';
+import { ROLES } from './constants/auth';
+
+import { UserService } from './services/user.service';
 
 declare const Liferay: any;
 
@@ -9,22 +13,15 @@ declare const Liferay: any;
 		Liferay.ThemeDisplay.getPathContext() + 
 		'/o/mkpl-home/app/app.component.html'
 })
-export class AppComponent {
-	params: LiferayParams;
-	labels: any;
-
-	constructor() {
-		this.labels = {        
-			
-			configuration: Liferay.Language.get('configuration'),
-			
-			portletNamespace: Liferay.Language.get('portlet-namespace'),
-        	contextPath: Liferay.Language.get('context-path'),
-			portletElementId: Liferay.Language.get('portlet-element-id'),
-		}
-	}
-
-	get configurationJSON() {
-		return JSON.stringify(this.params.configuration, null, 2);
+export class AppComponent implements OnInit {
+	// TODO se quita asincrono $userProfile: Observable<User>;
+	userProfile: User;
+	userRoles = ROLES;
+  
+	constructor(private userService: UserService) {}
+  
+	ngOnInit() {
+	  // TODO service this.$userProfile = this.auth0Service.getProfile();
+	  this.userProfile = this.userService.getProfile();
 	}
 }

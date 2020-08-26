@@ -1,0 +1,106 @@
+.orders-deactivated::before, .orders-two::before, .orders-one::before {
+  border-radius: 20px;
+  content: "";
+  height: 10px;
+  position: absolute;
+  right: 228px;
+  top: 2px;
+  width: 10px;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: 116px 1fr;
+  grid-template-rows: 135px;
+}
+
+.active-card {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.14);
+}
+.active-card:hover {
+  border: 2px solid #0D4D64;
+  transition: all 290ms cubic-bezier(0.79, 0.01, 0.38, 0.99);
+}
+
+.graphic-card {
+  background-color: #E7ECEF;
+  border-radius: 12px;
+  padding: 24px 32px 26px;
+}
+
+.inactive-graphics-card {
+  background-color: #FFF;
+}
+
+.info-img {
+  align-self: center;
+  width: 75px;
+}
+
+.custom-img {
+  align-self: center;
+  height: 62px;
+  width: 54px;
+}
+
+.date-text {
+  font-size: 12px;
+}
+
+.canvas-container {
+  height: 106px;
+  position: relative;
+  right: 12px;
+  top: 15px;
+  width: 106px;
+}
+
+.total-orders {
+  display: block;
+}
+
+.orders-one {
+  position: relative;
+}
+.orders-one::before {
+  background-color: #EFA51E;
+}
+
+.orders-two {
+  position: relative;
+}
+.orders-two::before {
+  background-color: #E24D56;
+}
+
+.orders-deactivated {
+  color: #DCDCDE;
+  position: relative;
+}
+.orders-deactivated::before {
+  background-color: #DCDCDE;
+}
+
+.custom-buttom {
+  padding: 10px;
+  width: 86px;
+}
+
+.disabled {
+  color: #DCDCDE;
+}
+
+.disabled-img {
+  filter: invert(50%);
+  opacity: 0.3;
+}
+
+.card:hover .custom-buttom {
+  background-color: #0D4D64;
+  border: 1px solid #638A99;
+  color: #F5F6FB;
+}
+
+.card {
+  margin-bottom: 0px;
+}

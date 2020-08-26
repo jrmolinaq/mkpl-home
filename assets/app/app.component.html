@@ -1,20 +1,18 @@
-<div>
-	<div>
-		<span class="tag">{{labels.portletNamespace}}:</span>
-		<span class="value">{{params.portletNamespace}}</span>
-	</div>
-	<div>
-		<span class="tag">{{labels.contextPath}}:</span>
-		<span class="value">{{params.contextPath}}</span>
-	</div>
-	<div>
-		<span class="tag">{{labels.portletElementId}}:</span>
-		<span class="value">{{params.portletElementId}}</span>
-	</div>
-	
-	<div>
-		<span class="tag">{{labels.configuration}}:</span>
-		<span class="value pre">{{configurationJSON}}</span>
-	</div>
-	
+<!-- TODO se quita asincrono
+<div class="height-100 column no-float" *ngIf="$userProfile | async as userProfile"> -->
+<div class="height-100 column no-float" *ngIf="userProfile">
+    <h1 class="poppins deep-sea-green bold text-big m-bottom-10">Inicio</h1>
+    {{userProfile.username}}<!-- TODO Borrar -->
+    <cards-home class="m-bottom-6"></cards-home>
+    <ng-container [ngSwitch]="userProfile.role">
+        <div *ngSwitchCase="userRoles.backoffice" class="row space-between width-100">
+			Backoffice<!-- TODO Borrar -->
+            <!-- TODO pendiente purchase-notices class="relative column"></purchase-notices -->
+            <!-- TODO pendiente order-incidents class="column"></order-incidents -->
+        </div>
+        <ng-container *ngSwitchDefault>
+			Otros<!-- TODO Borrar -->
+            <!-- TODO pendiente recent-orders class="height-100 column middle center"></recent-orders -->
+        </ng-container>
+    </ng-container>
 </div>

@@ -1,0 +1,122 @@
+<div class="row space-between">
+  <ng-container *ngIf="!isBackoffice; else backOffice">
+    <div class="info-card" [ngClass]="{'active-card card': inventory.totalItems}">
+      <div class="info-container">
+        <img class="info-img" [ngClass]="{'disabled-img': !inventory.totalItems}"
+          src="/o/mkpl-home/icons/base-box-color@3x.png" alt="inventario">
+        <div class="column">
+          <h1 class="deep-sea-green text-big" [ngClass]="{'disabled': !inventory.totalItems}">
+            Inventario</h1>
+          <span class="deep-sea-green title-medium bold m-bottom-1"
+            [ngClass]="{'disabled': !inventory.totalItems}">{{inventory.totalItems | number}}
+            Items</span>
+          <span class="date-text gothic" [ngClass]="{'disabled': !inventory.totalItems}">Última
+            actualización</span>
+          <span class="text-normal bold gothic m-bottom-3"
+            [ngClass]="{'disabled': !inventory.totalItems}">{{inventory.updateDate}}</span>
+          <!-- TODO se quita botón button *ngIf="!isProvider" class="custom-buttom button-secondary" [disabled]="!inventory.totalItems"
+            [routerLink]="['/inventory']">Ver todo</button>
+          <a *ngIf="!isProvider" class="custom-buttom button-secondary link-simple" 
+            [disabled]="!inventory.totalItems" href="/inventory">
+            Ver todo
+          </a -->
+          <input type="button" *ngIf="!isProvider" class="custom-buttom button-secondary" 
+            onclick="location.href='/inventory';" [disabled]="!inventory.totalItems" value="ver todo" />
+        </div>
+      </div>
+    </div>
+    <div class="info-card"
+      [ngClass]="{'active-card card': order.ongoingOrders || order.ordersToReview}">
+      <div class="info-container">
+        <img class="info-img"
+          [ngClass]="{'disabled-img': !order.ongoingOrders && !order.ordersToReview}"
+          src="/o/mkpl-home/icons/box-check-color@3x.png" alt="pedidos">
+        <div class="column">
+          <h1 class="deep-sea-green text-big"
+            [ngClass]="{'disabled': !order.ongoingOrders && !order.ordersToReview}">Pedidos</h1>
+          <span class="deep-sea-green title-medium bold m-bottom-1"
+            [ngClass]="{'disabled': !order.ongoingOrders}">{{order.ongoingOrders}} en curso</span>
+          <span class="date-text gothic m-bottom-8"
+            [ngClass]="{'disabled': !order.ordersToReview}">{{order.ordersToReview}} Pedidos a
+            revisar</span>
+          <!-- TODO se quita botón button  *ngIf="!isProvider" class="custom-buttom button-secondary"
+            [disabled]="!order.ongoingOrders && !order.ordersToReview" 
+            [routerLink]="['//order']">Ver todo</button>
+          <a *ngIf="!isProvider" class="custom-buttom button-secondary link-simple" 
+            [disabled]="!order.ongoingOrders && !order.ordersToReview" href="/order">
+            Ver todo
+          </a -->
+          <input type="button" *ngIf="!isProvider" class="custom-buttom button-secondary" 
+            onclick="location.href='/order';" [disabled]="!order.ongoingOrders && !order.ordersToReview" value="ver todo" />
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #backOffice>
+    <div class="info-card" [ngClass]="{'active-card card': backOfficeData.notices}">
+      <div class="info-container">
+        <img class="custom-img"
+          [src]="!backOfficeData.notices ? '/o/mkpl-home/icons/disabled-notices.png' : '/o/mkpl-home/icons/notices.png'"
+          alt="notices">
+        <div class="column">
+          <h1 class="deep-sea-green text-big m-bottom-2"
+            [ngClass]="{'disabled': !backOfficeData.notices}">
+            Avisos en curso</h1>
+          <span class="deep-sea-green title-medium bold m-bottom-10"
+            [ngClass]="{'disabled': !backOfficeData.notices}">{{backOfficeData.notices | number}}
+            avisos</span>
+          <!-- TODO se quita botón button class="custom-buttom button-secondary" [disabled]="!backOfficeData.notices"
+            [routerLink]="['/notices']">Ver todo</button>
+          <a class="custom-buttom button-secondary link-simple" 
+            [disabled]="!backOfficeData.notices" href="/notices">
+            Ver todo
+          </a -->
+          <input type="button" class="custom-buttom button-secondary" 
+          onclick="location.href='/inventory';" [disabled]="!backOfficeData.notices" value="ver todo" />
+        </div>
+      </div>
+    </div>
+    <div class="info-card"
+      [ngClass]="{'active-card card': backOfficeData.providers}">
+      <div class="info-container">
+        <img class="info-img"
+          [ngClass]="{'disabled-img': !backOfficeData.providers}"
+          src="/o/mkpl-home/icons/providers.png" alt="providers">
+        <div class="column">
+          <h1 class="deep-sea-green text-big m-bottom-2"
+            [ngClass]="{'disabled': !backOfficeData.providers}">Proveedores actuales</h1>
+          <span class="deep-sea-green title-medium bold m-bottom-10"
+            [ngClass]="{'disabled': !backOfficeData.providers}">{{backOfficeData.providers}} Prov.</span>
+          <!-- TODO se quita botón button class="custom-buttom button-secondary"
+            [disabled]="!backOfficeData.providers" [routerLink]="['/providers']">Ver todo</button -->
+          <input type="button" class="custom-buttom button-secondary" 
+            onclick="location.href='/providers';" [disabled]="!backOfficeData.providers" value="ver todo" />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <div class="graphic-card"
+    [ngClass]="{'inactive-graphics-card': !acceptanceLevel.total}">
+    <div class="info-container">
+      <div class="canvas-container">
+        Canva<!-- TODO Borrar -->
+        <!-- TODO se quitan los charts, buscar como ponerlos
+        <canvas baseChart width="100%" height="100%" [data]="pieChartData" [labels]="pieChartLabels"
+          [chartType]="pieChartType" [colors]="doughnutColors" [options]="pieChartOptions"
+          [legend]="pieChartLegend">
+        </canvas>
+        -->
+      </div>
+      <div class="column">
+        <h1 class="total-orders deep-sea-green text-big m-bottom-2"
+          [ngClass]="{'disabled': !acceptanceLevel.total}">Nivel de aceptación del proveedor</h1>
+        <span class="total-number deep-sea-green title-medium bold m-bottom-8"
+          [ngClass]="{'disabled': !acceptanceLevel.total}">{{acceptanceLevel.total}} {{graphTitle}}</span>
+        <span class="orders-one deep-sea-green bold m-bottom-2 m-left-6"
+          [ngClass]="{'orders-deactivated': !acceptanceLevel.total}">{{accepted}}% Aceptados</span>
+        <span class="orders-two deep-sea-green bold m-left-6"
+          [ngClass]="{'orders-deactivated': !acceptanceLevel.total}">{{rejected}}% No aceptados</span>
+      </div>
+    </div>
+  </div>
+</div>
