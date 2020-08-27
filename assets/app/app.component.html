@@ -7,7 +7,7 @@
     <ng-container [ngSwitch]="userProfile.role">
         <div *ngSwitchCase="userRoles.backoffice" class="row space-between width-100">
 			Backoffice<!-- TODO Borrar -->
-            <!-- TODO pendiente purchase-notices class="relative column"></purchase-notices -->
+            <purchase-notices class="relative column"></purchase-notices>
             <!-- TODO pendiente order-incidents class="column"></order-incidents -->
         </div>
         <ng-container *ngSwitchDefault>

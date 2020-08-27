@@ -7,6 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CardsHomeComponent } from './cards-home.component';
+import { OrderTableComponent } from './order-table.component';
+import { PurchaseNoticesComponent } from './purchase-notices.component';
+import { PaginatorComponent } from './paginator.component';
+
+import { CountDaysPipe } from './pipes/count-days.pipe';
+import { ShortLargeStringsPipe } from './pipes/short-large-strings.pipe';
 
 @NgModule({
 	imports: [
@@ -18,11 +24,19 @@ import { CardsHomeComponent } from './cards-home.component';
 	],
 	declarations: [
 		AppComponent,
-		CardsHomeComponent
+		CardsHomeComponent,
+		OrderTableComponent,
+		PaginatorComponent,
+		PurchaseNoticesComponent,
+		CountDaysPipe,
+		ShortLargeStringsPipe
 	],
 	entryComponents: [AppComponent],
 	bootstrap: [], // Don't bootstrap any component statically (see ngDoBootstrap() below)
-	providers: [],
+	providers: [
+		CountDaysPipe,
+		ShortLargeStringsPipe
+	],
 })
 export class AppModule {
 	// Avoid bootstraping any component statically because we need to attach to

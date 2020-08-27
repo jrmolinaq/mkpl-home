@@ -18,7 +18,8 @@ export class UserService {
     picture: "", expiresAt: 123, username: "Subsidiary", subsidiaryId: 7, providerId: 7};
 
     let temp = Math.random();
-    return temp <= 0.33? b: temp <= 0.66? p: s;
+    //return temp <= 0.33? b: temp <= 0.66? p: s;
+    return b;
   }
 
 }

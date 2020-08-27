@@ -11,6 +11,9 @@
 @import './icons.css';
 
 @import './cards-home.component.css';
+@import './order-table.component.css';
+@import './paginator.component.css';
+@import './purchase-notices.component.css';
 
 html,
 body {

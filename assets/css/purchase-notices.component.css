@@ -1,0 +1,24 @@
+.recent-notices-container {
+    background-color: #FFF;
+    border: 2px solid #F5F6FB;
+    border-radius: 12px;
+    min-height: 330px;
+    width: 674px;
+  }
+  
+  .empty-list {
+    font-size: 68px;
+  }
+  .empty-list::before {
+    color: #DCDCDE;
+  }
+  
+  .notices-table {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .notice-paginator {
+    bottom: -50px;
+    /*position: absolute;*/
+  }

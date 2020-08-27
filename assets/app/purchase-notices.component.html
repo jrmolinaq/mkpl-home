@@ -1,0 +1,27 @@
+<h1 class="order-incidents-title text-big poppins bold deep-sea-green">Compras manuales</h1>
+<ng-container *ngIf="manualPurchases; else emptyData">
+  <div class="recent-notices-container">
+    <order-table
+      (handleOrder) = handleOrder($event)
+      class="height-100 width-100"
+      [data]="manualPurchases"
+      [configTable]="configTable"
+      keyId='order_id'>
+    </order-table>
+  </div>
+  <!-- TODO se cambia totalElements por total_elements  *ngIf="paginatorData?.totalElements >= limit" -->
+  <paginator
+    *ngIf="paginatorData?.total_elements >= limit"
+    [paginator]="paginatorData"
+    class="notice-paginator"
+    (page)="currentPageChange($event)">
+  </paginator>
+</ng-container>
+<ng-template #emptyData>
+  <div class="recent-notices-container row middle center">
+    <div class="column center middle">
+      <i class="icon icon-empty-list empty-list"></i>
+      <h1 class="text-big bold poppins iron">Sin compras manuales</h1>
+    </div>
+  </div>
+</ng-template>
