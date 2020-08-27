@@ -91,6 +91,9 @@
   border: none;
   background: none;
 }
+.row.middle.nowrap {
+  flex-wrap: nowrap;
+}
 .row.bottom {
   align-items: flex-end;
 }

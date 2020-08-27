@@ -76,6 +76,7 @@ export class PurchaseNoticesComponent implements OnInit {
     this.getManualPurchases();
   }
 
+  // TODO se cambian nombres con guión bajo
   tranformData(manualp: ManualPurchase[]) {
     return manualp.map( (manual: any) => ({
       date: manual.date,

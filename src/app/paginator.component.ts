@@ -38,6 +38,7 @@ export class PaginatorComponent implements OnChanges, OnInit {
     }
   }
 
+  // TODO se cambian nombres con guión bajo
   private loadData(paginator: DataPaginator) {
     const {
       number_of_elements,

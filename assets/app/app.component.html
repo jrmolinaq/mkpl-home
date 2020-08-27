@@ -2,16 +2,13 @@
 <div class="height-100 column no-float" *ngIf="$userProfile | async as userProfile"> -->
 <div class="height-100 column no-float" *ngIf="userProfile">
     <h1 class="poppins deep-sea-green bold text-big m-bottom-10">Inicio</h1>
-    {{userProfile.username}}<!-- TODO Borrar -->
     <cards-home class="m-bottom-6"></cards-home>
     <ng-container [ngSwitch]="userProfile.role">
         <div *ngSwitchCase="userRoles.backoffice" class="row space-between width-100">
-			Backoffice<!-- TODO Borrar -->
             <purchase-notices class="relative column"></purchase-notices>
             <!-- TODO pendiente order-incidents class="column"></order-incidents -->
         </div>
         <ng-container *ngSwitchDefault>
-			Otros<!-- TODO Borrar -->
             <!-- TODO pendiente recent-orders class="height-100 column middle center"></recent-orders -->
         </ng-container>
     </ng-container>
