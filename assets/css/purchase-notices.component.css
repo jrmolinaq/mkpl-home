@@ -5,6 +5,9 @@
     min-height: 330px;
     width: 674px;
   }
+  .recent-notices-container.top-padding {
+    padding: 20px 0;
+  }
   
   .empty-list {
     font-size: 68px;

@@ -7,9 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CardsHomeComponent } from './cards-home.component';
+import { OrderIncidentsComponent } from './order-incidents.component';
+import { OrderItemComponent } from './item.component';
 import { OrderTableComponent } from './order-table.component';
 import { PurchaseNoticesComponent } from './purchase-notices.component';
 import { PaginatorComponent } from './paginator.component';
+import { RecentOrdersComponent } from './recent-orders.component';
 
 import { CountDaysPipe } from './pipes/count-days.pipe';
 import { ShortLargeStringsPipe } from './pipes/short-large-strings.pipe';
@@ -25,9 +28,12 @@ import { ShortLargeStringsPipe } from './pipes/short-large-strings.pipe';
 	declarations: [
 		AppComponent,
 		CardsHomeComponent,
+		OrderIncidentsComponent,
+		OrderItemComponent,
 		OrderTableComponent,
 		PaginatorComponent,
 		PurchaseNoticesComponent,
+		RecentOrdersComponent,
 		CountDaysPipe,
 		ShortLargeStringsPipe
 	],

@@ -15,7 +15,7 @@ declare const Liferay: any;
   selector: 'paginator',
   templateUrl:
     Liferay.ThemeDisplay.getPathContext() + 
-    '/o/mkpl-order/app/paginator.component.html'
+    '/o/mkpl-home/app/paginator.component.html'
 })
 export class PaginatorComponent implements OnChanges, OnInit {
   currentPage = 0;

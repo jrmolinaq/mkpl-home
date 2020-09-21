@@ -1,6 +1,6 @@
-<h1 class="order-incidents-title text-big poppins bold deep-sea-green">Compras manuales</h1>
 <ng-container *ngIf="manualPurchases; else emptyData">
-  <div class="recent-notices-container">
+  <div class="recent-notices-container top-padding">
+    <h1 class="order-incidents-title text-big poppins bold deep-sea-green">Compras manuales</h1>
     <order-table
       (handleOrder) = handleOrder($event)
       class="height-100 width-100"
@@ -18,8 +18,8 @@
   </paginator>
 </ng-container>
 <ng-template #emptyData>
-  <div class="recent-notices-container row middle center">
-    <div class="column center middle">
+  <div class="recent-notices-container row2 middle center">
+    <div class="column2 center middle">
       <i class="icon icon-empty-list empty-list"></i>
       <h1 class="text-big bold poppins iron">Sin compras manuales</h1>
     </div>

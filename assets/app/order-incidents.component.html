@@ -1,0 +1,27 @@
+<ng-container *ngIf="criticalOrders?.length; else emptyIncidents">
+  <div class="order-incidents-container limitter">
+      <h1 class="order-incidents-title text-big poppins bold deep-sea-green">Incidencias de pedidos</h1>
+
+      <!-- TODO se quita routerlink div class="order-incidents-content" *ngFor="let order of criticalOrders"  [routerLink]="['/order', order.id]" -->
+      <div class="order-incidents-content" *ngFor="let order of criticalOrders">
+        <a href="/order/detail?id={{order.id}}" class="link-simple">
+          <h1 class="order-incidents-id deep-sea-green text-normal">Pedido: {{order.id}}</h1>
+          <h3 class="order-incidents-date hoki">Fecha del pedido  {{order.date | date: 'dd/MM/yyyy' }}</h3>
+          <span class="order-incidents-status text-normal row2 middle center deep-sea-green chip m-right-2"
+            [ngClass]="states[order.status].class">
+            {{ states[order.status].text }}
+          </span>
+        </a>
+      </div>
+
+    </div>
+</ng-container>
+
+<ng-template #emptyIncidents>
+  <div class="order-incidents-container row2 middle center">
+    <div class="column2 center middle">
+      <i class="icon icon-empty-incidents empty-list"></i>
+      <h1 class="text-big bold poppins iron">Sin incidencias</h1>
+    </div>
+  </div>
+</ng-template>

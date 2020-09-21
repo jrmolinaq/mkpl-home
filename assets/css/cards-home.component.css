@@ -8,7 +8,7 @@
   width: 10px;
 }
 
-.info-container {
+.info-container-home {
   display: grid;
   grid-template-columns: 116px 1fr;
   grid-template-rows: 135px;

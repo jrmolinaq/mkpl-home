@@ -66,15 +66,15 @@ export const STATES = {
 
 export const NOTIFICATION_TYPES = {
   DANGER: {
-    image: '/o/mkpl-order/icons/danger-notification.svg',
+    image: '/o/mkpl-home/icons/danger-notification.svg',
     class: 'danger'
   },
   INFO: {
-    image: '/o/mkpl-order/icons/info-notification.svg',
+    image: '/o/mkpl-home/icons/info-notification.svg',
     class: 'info'
   },
   SUCCESS: {
-    image: '/o/mkpl-order/icons/success-notification.svg',
+    image: '/o/mkpl-home/icons/success-notification.svg',
     class: 'success'
   }
 };

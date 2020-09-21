@@ -41,19 +41,7 @@ export class PurchaseNoticesComponent implements OnInit {
   getManualPurchases(page = 0) {
     const orderBy = this.orderBy ? 'asc' : 'desc';
 
-    /* TODO service
-    this.noticeService.getManualPurchases(page, this.limit, this.order, orderBy)
-      .pipe(map(({ data, ...paginatorData }) => {
-        return {
-          manualp: this.tranformData(data),
-          paginatorData
-        };
-    })).subscribe(({ manualp, paginatorData }) => {
-      this.manualPurchases = manualp;
-      this.paginatorData = paginatorData;
-    });*/
-
-    // TODO borrar dummy
+    /* TODO service */
     this.noticeService.getManualPurchases(page, this.limit, this.order, orderBy)
       .pipe(map(({ data, ...paginatorData }) => {
         return {
@@ -64,6 +52,18 @@ export class PurchaseNoticesComponent implements OnInit {
       this.manualPurchases = manualp;
       this.paginatorData = paginatorData;
     });
+/*
+    // TODO borrar dummy
+    this.noticeService.getManualPurchases(page, this.limit, this.order, orderBy)
+      .pipe(map(({ data, ...paginatorData }) => {
+        return {
+          manualp: this.tranformData(data),
+          paginatorData
+        };
+    })).subscribe(({ manualp, paginatorData }) => {
+      this.manualPurchases = manualp;
+      this.paginatorData = paginatorData;
+    });*/
   }
 
   currentPageChange(page: number) {

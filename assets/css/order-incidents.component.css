@@ -1,0 +1,52 @@
+.order-incidents-container {
+  background-color: #FFF;
+  border: 2px solid #F5F6FB;
+  border-radius: 12px;
+  flex-basis: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  width: 424px;
+}
+.order-incidents-container.limitter {
+  padding: 20px 0;
+}
+.order-incidents-title {
+  padding: 0 30px;
+}
+.order-incidents-content {
+  align-items: center;
+  border-bottom: 1px solid #F5F6FB;
+  display: grid;
+  grid-template-areas: "id status" "date date";
+  padding: 17px 0 17px 30px;
+}
+.order-incidents-id {
+  grid-area: id;
+  position: relative;
+}
+.order-incidents-id::before {
+  background-color: #E24D56;
+  border: 1px solid #E24D56;
+  border-radius: 100%;
+  content: "";
+  height: 6px;
+  left: -17px;
+  position: absolute;
+  top: 50%;
+  width: 6px;
+}
+.order-incidents-date {
+  font-size: 10px;
+  grid-area: date;
+}
+.order-incidents-status {
+  grid-area: status;
+  justify-self: end;
+}
+
+.empty-list {
+  font-size: 68px;
+}
+.empty-list::before {
+  color: #DCDCDE;
+}

@@ -12,6 +12,7 @@
   border-radius: 4px;
   height: 24px;
   width: 24px;
+  border: none;
 }
 
 .prev:disabled {
@@ -19,7 +20,7 @@
   visibility: hidden;
 }
 .prev::before {
-  content: url(/o/mkpl-inventory/icons/arrow.svg);
+  content: url(/o/mkpl-home/icons/arrow.svg);
   display: block;
   transform: rotate(90deg);
 }
@@ -29,7 +30,7 @@
   visibility: hidden;
 }
 .next::before {
-  content: url(/o/mkpl-inventory/icons/arrow.svg);
+  content: url(/o/mkpl-home/icons/arrow.svg);
   display: block;
   transform: rotate(-90deg);
 }

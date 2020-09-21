@@ -1,15 +1,15 @@
 <!-- TODO se quita asincrono
 <div class="height-100 column no-float" *ngIf="$userProfile | async as userProfile"> -->
-<div class="height-100 column no-float" *ngIf="userProfile">
+<div class="height-100 column2 no-float" *ngIf="userProfile">
     <h1 class="poppins deep-sea-green bold text-big m-bottom-10">Inicio</h1>
     <cards-home class="m-bottom-6"></cards-home>
     <ng-container [ngSwitch]="userProfile.role">
-        <div *ngSwitchCase="userRoles.backoffice" class="row space-between width-100">
-            <purchase-notices class="relative column"></purchase-notices>
-            <!-- TODO pendiente order-incidents class="column"></order-incidents -->
+        <div *ngSwitchCase="userRoles.backoffice" class="row2 space-between width-100">
+            <purchase-notices class="relative column2"></purchase-notices>
+            <order-incidents class="column2 display-block"></order-incidents>
         </div>
         <ng-container *ngSwitchDefault>
-            <!-- TODO pendiente recent-orders class="height-100 column middle center"></recent-orders -->
+            <recent-orders class="height-100 column2 middle center no-float"></recent-orders>
         </ng-container>
     </ng-container>
 </div>

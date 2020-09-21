@@ -13,58 +13,34 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
-  // TODO service
   getDashboardInfo(role: string, currentUserId: any) {
     const pathByRole = getPathByRole(role, currentUserId);
-    return this.http.get(`rutaEndpoint/info/${pathByRole}`).pipe(map((response: any) => {
+    console.log('----', role, currentUserId);
+    return this.http.get(`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/cardsinfo/${pathByRole}`).pipe(map((response: any) => {
+      console.log('----', response);
       if (role !== ROLES.backoffice) {
         return {
           inventory: {
-            totalItems: response.totalProducts,
-            updateDate: formatDate(response.productsLastUpdate)
+            totalItems: response.total_products,
+            updateDate: formatDate(response.products_last_update)
           },
           order: {
-            ongoingOrders: response.ordersOnRoute,
-            ordersToReview: response.ordersDelayed,
-            totalOrders: response.totalOrders,
-            ordersAccepted: response.ordersAccepted
+            ongoingOrders: response.orders_on_route,
+            ordersToReview: response.orders_delayed,
+            totalOrders: response.total_orders,
+            ordersAccepted: response.orders_accepted
           }
         };
       }
       return {
         backOfficeData: {
-          notices: response.noticesOnRoute,
+          notices: response.notices_on_route,
           providers: response.providers,
-          totalNotices: response.totalNotices,
-          noticesAccepted: response.noticesAccepted
+          totalNotices: response.total_notices,
+          noticesAccepted: response.notices_accepted
         }
       };
     }));
   }
 
-  // TODO Servicio dummy
-  getDashboardInfo2(role: string, currentUserId: any) {    
-    if (role !== ROLES.backoffice) {
-      return {
-        inventory: {
-          totalItems: 10,
-          updateDate: formatDate(new Date('2020-07-31'))
-        },
-        order: {
-          ongoingOrders: 2,
-          ordersToReview: 2,
-          totalOrders: 6,
-          ordersAccepted: 2
-        }
-      };
-    }
-    return {
-      backOfficeData: {
-        notices: 2,
-        providers: 2,
-        totalNotices: 6,
-        noticesAccepted: 2
-      }
-    };
-  }
 }

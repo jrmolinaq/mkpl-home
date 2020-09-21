@@ -1,8 +1,8 @@
 <div class="table-content">
-  <div class="table-content-header row">
-    <h3 class="header-title deep-sea-green title-small-poppins bold item-1 row middle nowrap" *ngFor="let header of configTable">
+  <div class="table-content-header row2">
+    <h3 class="header-title deep-sea-green title-small-poppins bold item-1 row2 middle nowrap" *ngFor="let header of configTable">
       {{ header.title }}
-      <div class="row middle nowrap m-left-2" *ngIf="header.sortable">
+      <div class="row2 middle nowrap m-left-2" *ngIf="header.sortable">
         <button type="button" (click)="handleOrder.emit(header.key)" class="icon-sortable">
           <i class="icon icon-long-down-arrow hoki text-big"></i>
         </button>
@@ -14,7 +14,7 @@
   </div>
   <ng-container *ngFor="let item of data | slice:paginateStart:paginateEnd">
     <!-- TODO se quita routerLink div class="row table-content-item middle" [routerLink]="['/order', item.orderId]"-->
-    <div class="row table-content-item middle">
+    <div class="row2 table-content-item middle">
       <ng-container *ngFor="let config of configTable">
         <ng-container [ngSwitch]="config.key">
           <!-- TODO: buscar la forma de mostrar el timer -->
@@ -30,8 +30,8 @@
               {{ item.date | date: 'dd/MM/yyyy' }}
             </ng-template>
           </span>
-          <span *ngSwitchCase="'status'" class="table-item item-1 row middle">
-            <span class="text-normal row middle center deep-sea-green chip m-right-7"
+          <span *ngSwitchCase="'status'" class="table-item item-1 row2 middle">
+            <span class="text-normal row2 middle center deep-sea-green chip m-right-7"
               [ngClass]="states[item.status].class">
               {{ states[item.status].text }}
             </span>
@@ -39,7 +39,7 @@
               <i class="icon icon-long-right-arrow deep-sea-green text-big"></i>
             </button>
           </span>
-          <span *ngSwitchDefault class="table-item item-1 row middle">
+          <span *ngSwitchDefault class="table-item item-1 row2 middle">
             <span class="deep-sea-green text-normal item-1">
               <ng-container *ngIf="config.capitalize; else defaultView">
                 {{ item[config.key] | titlecase}}
@@ -49,7 +49,7 @@
               </ng-template>
             </span>
             <a href="/order/detail?id={{item.orderId}}">
-              <button *ngIf="config.lastColumn" type="button" class="icon-button">
+              <button *ngIf="config.lastColumn" type="button" class="icon-button row2 middle center">
                 <i class="icon icon-long-right-arrow deep-sea-green text-big"></i>
               </button>
             </a>

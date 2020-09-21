@@ -1,4 +1,7 @@
 .table-header {
+  background-color: #FFF;
+  border: 2px solid #F5F6FB;
+  border-radius: 8px 8px 0 0;
   padding: 24px 30px;
 }
 
@@ -13,6 +16,9 @@
 }
 
 .table-content {
+  background-color: #FFF;
+  border: 2px solid #F5F6FB;
+  border-radius: 0 0 8px 8px;
   border-top: none;
   padding: 0 20px;
 }
@@ -63,6 +69,8 @@
 
 .paginator-button {
   font-size: 18px;
+  border: none;
+  background: 0 0;
 }
 .paginator-button:disabled {
   color: #E7ECEF;
