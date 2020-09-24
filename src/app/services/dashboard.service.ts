@@ -15,9 +15,7 @@ export class DashboardService {
 
   getDashboardInfo(role: string, currentUserId: any) {
     const pathByRole = getPathByRole(role, currentUserId);
-    console.log('----', role, currentUserId);
     return this.http.get(`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/cardsinfo/${pathByRole}`).pipe(map((response: any) => {
-      console.log('----', response);
       if (role !== ROLES.backoffice) {
         return {
           inventory: {

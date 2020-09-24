@@ -9,9 +9,8 @@
       keyId='order_id'>
     </order-table>
   </div>
-  <!-- TODO se cambia totalElements por total_elements  *ngIf="paginatorData?.totalElements >= limit" -->
   <paginator
-    *ngIf="paginatorData?.total_elements >= limit"
+    *ngIf="paginatorData?.totalElements >= limit"
     [paginator]="paginatorData"
     class="notice-paginator"
     (page)="currentPageChange($event)">

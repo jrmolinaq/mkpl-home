@@ -22,11 +22,11 @@ export class PurchaseNoticesComponent implements OnInit {
   paginatorData: { 
     number: number; 
     size: number; 
-    total_elements: number; 
+    totalElements: number; 
     sort: string; 
     last: boolean; 
-    number_of_elements: number; 
-    total_pages: number; 
+    numberOfElements: number; 
+    totalPages: number; 
     first: boolean;
   };
 
@@ -52,18 +52,6 @@ export class PurchaseNoticesComponent implements OnInit {
       this.manualPurchases = manualp;
       this.paginatorData = paginatorData;
     });
-/*
-    // TODO borrar dummy
-    this.noticeService.getManualPurchases(page, this.limit, this.order, orderBy)
-      .pipe(map(({ data, ...paginatorData }) => {
-        return {
-          manualp: this.tranformData(data),
-          paginatorData
-        };
-    })).subscribe(({ manualp, paginatorData }) => {
-      this.manualPurchases = manualp;
-      this.paginatorData = paginatorData;
-    });*/
   }
 
   currentPageChange(page: number) {

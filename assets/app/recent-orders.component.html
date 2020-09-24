@@ -1,11 +1,11 @@
 <!-- TODO se quita async <ng-container *ngIf="$recentOrders | async as orders; else loader"> -->
-<ng-container *ngIf="recentOrders; else loader">
-  <ng-container *ngIf="recentOrders.data?.length;else emptyRecentOrders">
+<ng-container *ngIf="$recentOrders | async as orders; else loader">
+  <ng-container *ngIf="orders.data?.length;else emptyRecentOrders">
     <div class="width-100  height-100">
-      <div class="width-100 table-container m-bottom-3" *ngFor="let order of recentOrders.data">
+      <div class="width-100 table-container m-bottom-3" *ngFor="let order of orders.data">
         <order-item class="column2 table-container no-float" [data]="order"></order-item>
       </div>
-      <paginator [paginator]="recentOrders.dataPaginator" (page)="currentPageChange($event)"></paginator>
+      <paginator [paginator]="orders.dataPaginator" (page)="currentPageChange($event)"></paginator>
     </div>
   </ng-container>
   <ng-template #emptyRecentOrders>
