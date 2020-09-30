@@ -67,7 +67,7 @@ export class CardsHomeComponent implements OnInit {
     // TODO cambiar para DEV
     let role = ROLES.subsidiary;
     //let subsidiaryId = 60;
-    let subsidiaryId = 1;
+    let subsidiaryId = 5;
     let providerId = null;
 
     this.isProvider = role === ROLES.provider;
